@@ -1,6 +1,7 @@
 <%-include ('partials/head')%>
 <body>
   <%-include ('partials/navbar')%>
+
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Bienvenido a mis posts</h5>
@@ -13,23 +14,26 @@
             <th scope="col">descripcion</th>
             <th scope="col">fecha</th>
             <th scope="col">accion</th>
-            
           </tr>
         </thead>
         <tbody>
+          <% posts.forEach((item)=>{ %>
           <tr>
-            <th scope="col">1</th>
-            <td>{foto...}</td>
-            <td>{descripcion...}</td>
-            <td>{subida...}</td>
+            <td><%=item.id%></td>
+            <td></td>
+            <td><%= item.descripcion%></td>
+            <td></td>
             <td>
               <button type="button" class="btn btn-primary">Editar</button>
-           
+
               <button type="button" class="btn btn-danger">eliminar</button>
             </td>
           </tr>
+          <% }) %>
         </tbody>
       </table>
     </div>
   </div>
+  
 </body>
+<%-include ('partials/footer')%>
